@@ -1,0 +1,64 @@
+# IP Block Protection - configuration options.
+# These become XLite\Model\Config rows in the "IpBlock\Protection" category,
+# which X-Cart renders as the module's Settings form. Values are read at
+# runtime via \XLite\Core\Config::getInstance()->{'IpBlock\Protection'}->...
+XLite\Model\Config:
+  - name: enabled
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 100
+    value: ''
+
+  - name: site_id
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Text
+    orderby: 200
+    value: ''
+
+  - name: api_key
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Password
+    orderby: 300
+    value: ''
+
+  - name: api_url
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Text
+    orderby: 400
+    value: 'https://api.ip-block.com/v1/check'
+
+  - name: fail_open
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 500
+    value: 'Y'
+
+  - name: cache_ttl
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Text
+    orderby: 600
+    value: '300'
+
+  - name: behind_proxy
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Input\Checkbox\OnOff
+    orderby: 700
+    value: ''
+
+  - name: block_action
+    category: IpBlock\Protection
+    type: XLite\Module\IpBlock\Protection\View\FormField\Select\BlockAction
+    orderby: 800
+    value: 'redirect'
+
+  - name: block_message
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Textarea\Simple
+    orderby: 900
+    value: 'Access denied.'
+
+  - name: whitelist
+    category: IpBlock\Protection
+    type: XLite\View\FormField\Textarea\Simple
+    orderby: 1000
+    value: ''
